@@ -1,0 +1,15 @@
+select modulecode,duration from modules where duration<6;
+select a.batchcode,a.trainerid,a.coursecode,a.startdate,a.capacity,a.batchstrength from batches a,trainers b where trainername='KRISHNAN' and a.trainerid=b.trainerid;
+select modulename from modules natural join courseandmodules where coursecode=100;
+select modulename,coursecode from modules natural join courseandmodules where coursecode=100;
+select count(modulename) as NumberofModules from modules natural join courseandmodules where coursecode=100;
+select count(modulename) as NumberofModules,coursecode from modules natural join courseandmodules where coursecode=100 group by coursecode;
+select title,fees from courses order by fees desc limit 1;
+select * from students where batchcode=3001;
+select * from students where place='CHENNAI';
+select count(modulecode) as LESSTHANVIHOURS from modules where duration<6;
+select batchcode,title,startdate from batches natural join courses where startdate>='2012-05-01' and startdate<='2012-05-31';
+select coursecode,title,fees from courses natural join batches where startdate<'2012-01-01' or startdate>'2012-01-31';
+select modulename from modules where modulecode in (select modulecode from courseandmodules where coursecode=(select coursecode from courses where title='Oracle DBA'));
+select studentid,studentname,batchcode,place,phone from students natural join batches where place='CHENNAI' and startdate>='2012-01-01' and startdate<='2012-12-31';
+select studentid,studentname from students natural join batches where coursecode=200;
