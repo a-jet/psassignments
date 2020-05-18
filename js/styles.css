@@ -1,0 +1,40 @@
+h3{
+    color:navy;
+    border-color: black;
+}
+p{
+    color: blueviolet;
+}
+#empl{
+    color: red;
+}
+button{
+    text-align: center;
+    display: inline;
+    cursor: pointer;
+}
+table{
+    border: 1px black;
+    width: 10%;
+}
+td{
+    text-align: center;
+}
+@media(min-width:400px){
+    table{
+        background-color: yellow;
+        width: 100%;
+    }
+    td{
+        background-color: white;
+    }
+}
+@media(min-width:800px){
+    table{
+        background-color: aqua;
+        width: 10%;
+    }
+    td{
+        background-color: white;
+    }
+}
