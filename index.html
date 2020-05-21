@@ -1,0 +1,110 @@
+<!doctype html>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="styles.css">
+<title>Demo</title>
+<header>
+    <nav>
+        <ul>
+            <li class="post"><a href="#home" >Home</a></li>
+            <li class="post"><a href="#login">Login page</a></li>
+            <li class="post"><a href="#calci">Calculator</a></li>
+            <li class="post"><a href="#report">Report generation</a></li>
+        </ul>
+    </nav>
+</header>
+<p id="home">This is a demo page. This is just for an assignment. PAC-MAN is an arcade game developed by Namco and first released in Japan in May 1980. It was created by Japanese video game designer Toru Iwatani. It was licensed for distribution in the United States by Midway and released in October 1980. Immensely popular from its original release to the present day, Pac-Man is considered one of the classics of the medium, and an icon of 1980s popular culture. Upon its release, the game—and, subsequently, Pac-Man derivatives—became a social phenomenon that yielded high sales of merchandise and inspired a legacy in other media, such as the Pac-Man animated television series and the top-ten hit single "Pac-Man Fever".[11] Pac-Man was popular in the 1980s and 1990s and is still played in the 2010s. Tetris is a tile-matching puzzle video game, originally designed and programmed by Russian game designer Alexey Pajitnov.[1] It was released on June 6, 1984, while he was working for the Dorodnitsyn Computing Centre of the Academy of Science of the USSR in Moscow. He derived its name from the Greek numerical prefix tetra- (all of the game's pieces contain four segments) and tennis, Pajitnov's favorite sport.</p>
+<p>Standalone apps run on the device itself. These apps may use the phone to get a network connection or get a connection directly though Wi-Fi.</p>
+<p>Companion apps run primarily on the phone, sending UI commands to the device’s app and receiving interaction from the user. They can also be companions in a game or an app that is being controlled by the user on a phone (or TV)</p>
+<p>Faces for watches feature a custom clock screen, the kind you see when you look at a watch without interacting with it.</p>
+<p>Cards or glances are static views that are available quickly from the home screen and feature updated content from an app.</p>
+<p>Rich notifications add wearable-specific abilities to the push or local notifications that are delivered by a phone app.</p>
+
+<form id="login" onsubmit="sub()">
+    <h3>Login page:</h3>
+    <div>
+      <label id="loginlb">Email address:</label><br>
+      <input class="loginip" id="lomail" placeholder="Enter email"><br>
+    </div>
+    <br>
+    <div>
+        <label id="loginlb">Name:</label><br>
+        <input class="loginip" id="loname" placeholder="Enter name"><br>
+      </div>
+      <br>
+    <br>
+    <button type="submit">Submit</button>
+  </form>
+  <br>
+<div id="report">
+    <p>Login Report:</p>
+ <table id="rep" border="1">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Email address</th>
+        </tr>
+    </thead>
+ </table>
+</div>
+<div id="calci">
+    <p>Calculator:</p>
+  <table border="10"> 
+    <tr> 
+       <td colspan="3"><input type="text" id="result"></td> 
+       <td><input type="button" value="c" onclick="clr()"/> </td> 
+    </tr> 
+    <tr>
+       <td><input type="button" value="1" onclick="dis('1')"/> </td> 
+       <td><input type="button" value="2" onclick="dis('2')"/> </td> 
+       <td><input type="button" value="3" onclick="dis('3')"/> </td> 
+       <td><input type="button" value="/" onclick="dis('/')"/> </td> 
+    </tr> 
+    <tr> 
+       <td><input type="button" value="4" onclick="dis('4')"/> </td> 
+       <td><input type="button" value="5" onclick="dis('5')"/> </td> 
+       <td><input type="button" value="6" onclick="dis('6')"/> </td> 
+       <td><input type="button" value="-" onclick="dis('-')"/> </td> 
+    </tr> 
+    <tr> 
+       <td><input type="button" value="7" onclick="dis('7')"/> </td> 
+       <td><input type="button" value="8" onclick="dis('8')"/> </td> 
+       <td><input type="button" value="9" onclick="dis('9')"/> </td> 
+       <td><input type="button" value="+" onclick="dis('+')"/> </td> 
+    </tr> 
+    <tr> 
+       <td><input type="button" value="." onclick="dis('.')"/> </td> 
+       <td><input type="button" value="0" onclick="dis('0')"/> </td> 
+       <td><input type="button" value="=" onclick="solve()"/> </td> 
+       <td><input type="button" value="*" onclick="dis('*')"/> </td> 
+    </tr> 
+ </table>
+</div>
+ <script>
+     var d="";
+     function dis(a){
+         d=d+a;
+        document.getElementById("result").value=d;
+     }
+     function solve(){
+        d=eval(d);
+        document.getElementById("result").value=d;
+     }
+     function clr(){
+         d="";
+         dis(d);
+     }
+     function sub(){
+        nam=document.getElementById("loname").value;
+        mail=document.getElementById("lomail").value;
+        tab(nam,mail);
+        nam='';
+        mail='';
+        document.getElementById("loname").value=nam;
+        document.getElementById("lomail").value=mail;
+     }
+     function tab(nam,mail){
+        var el="<tr><td>"+nam+"</td>"+"<td>"+mail+"</td></tr>";
+        document.getElementById("rep").innerHTML+=el;
+     }
+ </script>
