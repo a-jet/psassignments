@@ -1,0 +1,73 @@
+body{
+    margin: 0;
+    padding: 0;
+}
+header{
+    background-color:yellow;
+    margin:10px;
+    padding: 30px;
+    top: 0;
+    position: fixed;
+    width: 100%;
+}
+
+nav li{
+    font-size: large;
+    font-weight: bold;
+}
+ul,ol{
+    list-style: none;
+    padding-left: 0;
+
+}
+.post{
+    margin-right: 5px;
+    flex-grow: 1;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+nav ul{
+    display: flex;
+    flex-direction: row;
+    text-align: center;
+}
+a{
+    text-decoration: none;
+    color:#ff7a52;
+}
+#home,#calci,#report,#login{
+    padding-top: 140px;
+}
+.loginip{
+    width: 30%;
+    height: 30px;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    margin-left: 10px;
+}
+#loginlb,p{
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: large;
+    margin-left: 10px;
+}
+button{
+    margin-left: 20px;
+}
+a:visited{
+    color:red;
+}
+table{
+    margin-left: 10px;
+    font-size: large;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+td{
+    align-items: center;
+}
+@media(max-width:1000px){
+    .loginip{
+        width: 90%;
+    }
+    header{
+        margin: 0;
+    }
+}
